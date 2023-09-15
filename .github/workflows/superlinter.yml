@@ -1,4 +1,7 @@
 name: staging-deploy
+env:
+  APPLICATION_NAME: "MyActions"
+  PACKAGE_NAME: "deploy"
 
 on:
   release:
@@ -13,3 +16,8 @@ jobs:
     steps:
     - name: Print Hello
       run : echo "hello world"
+
+    - name: Execute commands
+      run : |
+        echo "hello world2"
+        echo "hello world3"
