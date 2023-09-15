@@ -1,17 +1,15 @@
-name: Super-Linter
+name: staging-deploy
 
-on: push
+on:
+  release:
+    types: [ published ]
 
 jobs:
-  super-lint:
-    name: Lint code base
+  deploy:
+    name: Deployment
+    
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Print Hello
+      run : echo "hello world"
